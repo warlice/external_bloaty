@@ -1,0 +1,13 @@
+name: "bloaty"
+description:
+    "A size profiler for binaries."
+
+third_party {
+  url {
+    type: GIT
+    value: "https://github.com/google/bloaty"
+  }
+  version: "5826f166886f99f07398a9ed4926e38d5c69f5d6"
+  last_upgrade_date { year: 2020 month: 11 day: 9 }
+  license_type: RECIPROCAL
+}
