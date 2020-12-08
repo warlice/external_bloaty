@@ -1,0 +1,59 @@
+cc_library_host_static {
+    name: "bloaty-proto",
+    srcs: [
+        "bloaty.proto",
+    ],
+    proto: {
+        export_proto_headers: true,
+        type: "full",
+    },
+}
+
+cc_defaults {
+    name: "bloaty-defaults",
+    cflags: [
+        "-fexceptions",
+        "-Wno-macro-redefined",
+        "-Wno-unused-parameter",
+        "-Wno-shift-count-overflow",
+    ],
+    header_libs: [
+        "libabsl_headers",
+    ],
+    static_libs: [
+        "bloaty-proto",
+        "libprotobuf-cpp-full",
+        "libabsl_base",
+        "libabsl_numeric",
+        "libabsl_strings",
+        "libabsl_types",
+        "libcapstone",
+    ],
+}
+
+cc_library_host_static {
+    name: "libbloaty",
+    defaults: ["bloaty-defaults"],
+    srcs: [
+        "bloaty.cc",
+        "demangle.cc",
+        "disassemble.cc",
+        "dwarf.cc",
+        "elf.cc",
+        "macho.cc",
+        "range_map.cc",
+        "webassembly.cc",
+    ],
+    header_libs: [
+        "libbloaty_headers",
+    ],
+}
+
+cc_binary_host {
+    name: "bloaty",
+    defaults: ["bloaty-defaults"],
+    srcs: ["main.cc"],
+    static_libs: [
+        "libbloaty",
+    ],
+}
