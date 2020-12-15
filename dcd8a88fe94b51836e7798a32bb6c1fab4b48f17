@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "920e4864_8093136c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1453040
+      },
+      "writtenOn": "2020-12-15T19:26:10Z",
+      "side": 1,
+      "message": "Presubmits are failing since submodule file has been defined. Could you remove it please?",
+      "revId": "dcd8a88fe94b51836e7798a32bb6c1fab4b48f17",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
