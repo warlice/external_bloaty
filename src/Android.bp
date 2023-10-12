@@ -17,16 +17,10 @@ cc_defaults {
         "-Wno-unused-parameter",
         "-Wno-shift-count-overflow",
     ],
-    header_libs: [
-        "libabsl_headers",
-    ],
     static_libs: [
         "bloaty-proto",
         "libprotobuf-cpp-full",
-        "libabsl_base",
-        "libabsl_numeric",
-        "libabsl_strings",
-        "libabsl_types",
+        "libabsl_host",
         "libcapstone",
     ],
 }
